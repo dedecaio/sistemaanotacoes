@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Anotações</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="titulo">
+	<h2>Faça sua anotação</h2>
+</div>	
+<div class="container-anotacoes">
+
+
+</div>
+
+
+<div class="btn-add">
+	<b>+</b>
+</div><!--btn-add-->	
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+	$(function(){
+		$('.btn-add').click(function(){
+			var el = '<div class="anotacao-single"><textarea placeholder="Sua anotação"></textarea></div>'
+			$('.container-anotacoes').append(el);
+
+			var textArea = $('.anotacao-single').last().find('textarea');
+
+			var date = new Date();
+			var hh = date.getHours();
+			var mm = date.getMinutes();
+
+
+			var finalTime = hh+":"+mm+" /"+date;
+
+			textArea.attr("placeholder","Nova anotação em: "+finalTime);
+
+		});
+	});
+</script>
+</body>
+</html>
